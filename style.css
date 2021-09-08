@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+body {
+    background-color: #D8F8FA;;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    padding: 8px;
+    font-family: 'Cabin', sans-serif;
+    color: teal;
+    background-color: #D8F8FA;
+    font-size: 30px;
+    text-align: center;
+    line-height:70px;
+    opacity: 0.6;
+    position: relative;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+a:hover {
+    opacity: 1
+}
+
+h1 {
+    font-size:70px;
+    text-align:center;
+    font-family: 'Cabin', sans-serif;
+    color: teal;
+    background-color:#D8F8FA;
+    padding: 0px;
+}
+
+h2 {
+    font-family: 'Cabin', sans-serif;
+    color: teal;
+    font-size:35px;
+}
+
+p {
+    font-family: 'Cabin', sans-serif;
+    color: teal;
+    font-size:20px;
+}
+
+.footer {
+    background-color: teal;
+    font-family: 'Cabin', sans-serif;
+    color: rgb(242, 244, 247);
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+}
+
+input[type=submit] {
+    background-color: teal;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Cabin', sans-serif;
+}
+
+input[type=text], select, textarea {
+    margin-left: 50px;
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'Cabin', sans-serif;
+}
