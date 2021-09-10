@@ -96,9 +96,42 @@ $all_food_result = mysqli_query($con, $all_food_query);
 
         ?>
     </select>
-
     <input type="submit" name="foods_button" value="Show me the food information">
     </form>
+    <h2> View all options</h2>
+
+    <form action="food.php" method="post">
+        <input type='submit' name='testquery1' value="Food">
+    </form>
+
+    <?php
+    if(isset($_POST['testquery1'])) {
+        $result = mysqli_query($con, "SELECT * FROM food");
+        if (mysqli_num_rows($result) != 0) {
+            echo "<table>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th class='foodColumn'>Item</th>";
+            echo "<th class='costColumn'>cost </th>";
+            echo "<th class ='stockColumn'>stock</th>";
+            echo "</tr>";
+            echo "</thead>";
+            while ($test = mysqli_fetch_array($result)) {
+                $id = $test['FoodID'];
+
+                echo "<tr>";
+                echo "<td>" . $test['Fitem'] . "</td>";
+                echo "<td>" . $test['Fcost'] . "</td>";
+                echo "<td>" . $test['Fstock'] . "</td>";
+                echo "</tr>";
+
+
+            }
+            echo "</table>";
+        }
+    }
+    ?>
+
     <div class="footer">
         <p>Footer</p>
     </div>
