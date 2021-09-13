@@ -101,6 +101,39 @@ $all_drink_result = mysqli_query($con, $all_drink_query);
 
     <input type="submit" name="drinks_button" value="Show me the drink information">
     </form>
+    <h2> View all options</h2>
+
+    <form action="drink.php" method="post">
+        <input type='submit' name='testquery1' value="Drink">
+    </form>
+
+    <?php
+    if(isset($_POST['testquery1'])) {
+        $result = mysqli_query($con, "SELECT * FROM drinks");
+        if (mysqli_num_rows($result) != 0) {
+            echo "<table>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th class='drinkColumn'>Item</th>";
+            echo "<th class='costColumn'>cost </th>";
+            echo "<th class ='stockColumn'>stock</th>";
+            echo "</tr>";
+            echo "</thead>";
+            while ($test = mysqli_fetch_array($result)) {
+                $id = $test['DrinkID'];
+
+                echo "<tr>";
+                echo "<td>" . $test['Ditem'] . "</td>";
+                echo "<td>" . $test['Dcost'] . "</td>";
+                echo "<td>" . $test['Dstock'] . "</td>";
+                echo "</tr>";
+
+
+            }
+            echo "</table>";
+        }
+    }
+    ?>
     <div class="footer">
         <p>Footer</p>
     </div>
