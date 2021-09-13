@@ -58,7 +58,7 @@ p {
     font-family: 'Cabin', sans-serif;
     color: rgb(242, 244, 247);
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     width: 100%;
 }
 
@@ -83,4 +83,36 @@ input[type=text], select, textarea {
     margin-bottom: 16px;
     resize: vertical;
     font-family: 'Cabin', sans-serif;
+}
+.drinkColumn {
+    width: 200px;
+}
+
+.foodColumn {
+    width: 200px;
+}
+
+.costColumn {
+    width: 200px;
+}
+
+.stockColumn {
+    width: 200px;
+}
+
+table {
+    margin: auto;
+    border: thick solid teal;
+    border-spacing: 0;
+    font-family: 'Hammersmith One', sans-serif;
+    color: teal;
+    margin-bottom: 50px;
+}
+
+td {
+    border: solid teal;
+}
+
+tr {
+    border: thick solid teal;
 }
