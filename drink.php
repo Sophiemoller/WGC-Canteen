@@ -15,7 +15,7 @@ if(isset($_GET['drink'])){
 /* Drinks Query */
 /*SELECT DrinkID, DrinkName FROM drinks */
 
-$this_drink_query = "SELECT Ditem, Dcost, Dstock FROM drinks WHERE drinks.DrinkID = '" .$id."'";
+$this_drink_query = "SELECT Ditem, Dcost, Dstock, Dcal FROM drinks WHERE drinks.DrinkID = '" .$id."'";
 $this_drink_result = mysqli_query($con, $this_drink_query);
 $this_drink_record = mysqli_fetch_assoc($this_drink_result);
 
@@ -80,6 +80,7 @@ $all_drink_result = mysqli_query($con, $all_drink_query);
     echo "<p> Item: " . $this_drink_record['Ditem'] . "<br>";
     echo "<p> Cost: " . $this_drink_record['Dcost'] . "<br>";
     echo "<p> In/out of stock: " . $this_drink_record['Dstock'] . "<br>";
+    echo "<p> Calories: " . $this_drink_record['Dcal'] . "<br>";
 
     ?>
 
