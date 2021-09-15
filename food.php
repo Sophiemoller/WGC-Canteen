@@ -11,7 +11,6 @@ if(isset($_GET['food'])){
 }else {
     $id = 1;
 }
-
 /* Food Query */
 /*SELECT FoodID, Fitem FROM food */
 
@@ -132,7 +131,76 @@ $all_food_result = mysqli_query($con, $all_food_query);
         }
     }
     ?>
+    <div class="row">
+        <form action="food.php" method="post">
+            <input type='submit' name='fooditemquery' value="Sort A-Z">
+        </form>
 
+        <form action="food.php" method="post">
+            <input type='submit' name='foodcostquery' value="Cost: Low-High">
+        </form>
+    </div>
+    <?php
+    if(isset($_POST['fooditemquery']))
+    {
+        $result=mysqli_query($con, "SELECT * FROM food ORDER BY food.Fitem ASC");
+        if(mysqli_num_rows($result)!=0)
+        {
+            echo "<table>";
+            echo"<thead>";
+            echo"<tr>";
+            echo"<th class='foodColumn'>Item</th>";
+            echo"<th class='costColumn'>cost </th>";
+            echo"<th class ='stockColumn'>stock</th>";
+            echo"</tr>";
+            echo"</thead>";
+            while($test = mysqli_fetch_array($result))
+            {
+                $id = $test['FoodID'];
+
+                echo "<tr>";
+                echo "<td>". $test['Fitem']. "</td>";
+                echo "<td>". $test['Fcost']. "</td>";
+                echo "<td>". $test['Fstock']. "</td>";
+                echo "</tr>";
+
+
+            }
+            echo "</table>";
+        }
+    }
+    ?>
+
+    <?php
+    if(isset($_POST['foodcostquery']))
+    {
+        $result=mysqli_query($con, "SELECT * FROM food ORDER BY food.Fcost DESC");
+        if(mysqli_num_rows($result)!=0)
+        {
+            echo "<table>";
+            echo"<thead>";
+            echo"<tr>";
+            echo"<th class='foodColumn'>drink</th>";
+            echo"<th class='costColumn'>cost </th>";
+            echo"<th class ='stockColumn'>stock</th>";
+            echo"</tr>";
+            echo"</thead>";
+            while($test = mysqli_fetch_array($result))
+            {
+                $id = $test['FoodID'];
+
+                echo "<tr>";
+                echo "<td>". $test['Fitem']. "</td>";
+                echo "<td>". $test['Fcost']. "</td>";
+                echo "<td>". $test['Fstock']. "</td>";
+                echo "</tr>";
+
+
+            }
+            echo "</table>";
+        }
+    }
+    ?>
     <div class="footer">
         <p>Footer</p>
     </div>
