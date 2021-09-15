@@ -177,7 +177,7 @@ $all_drink_result = mysqli_query($con, $all_drink_query);
     <?php
     if(isset($_POST['drinkcostquery']))
     {
-        $result=mysqli_query($con, "SELECT * FROM drinks ORDER BY drinks.Dcost DESC");
+        $result=mysqli_query($con, "SELECT * FROM drinks ORDER BY drinks.Dcost ASC");
         if(mysqli_num_rows($result)!=0)
         {
             echo "<table>";
