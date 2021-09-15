@@ -136,10 +136,6 @@ $all_drink_result = mysqli_query($con, $all_drink_query);
     ?>
     <div class="row">
         <form action="drink.php" method="post">
-            <input type='submit' name='testquery1' value="Drinks">
-        </form>
-
-        <form action="drink.php" method="post">
             <input type='submit' name='drinkitemquery' value="Sort A-Z">
         </form>
 
@@ -147,37 +143,6 @@ $all_drink_result = mysqli_query($con, $all_drink_query);
             <input type='submit' name='drinkcostquery' value="Cost: Low-High">
         </form>
     </div>
-    <?php
-    if(isset($_POST['testquery1']))
-    {
-        $result=mysqli_query($con, "SELECT * FROM drinks");
-        if(mysqli_num_rows($result)!=0)
-        {
-            echo "<table>";
-            echo"<thead>";
-            echo"<tr>";
-            echo"<th class='drinkColumn'>drink</th>";
-            echo"<th class='costColumn'>cost </th>";
-            echo"<th class ='stockColumn'>stock</th>";
-            echo"</tr>";
-            echo"</thead>";
-            while($test = mysqli_fetch_array($result))
-            {
-                $id = $test['DrinkID'];
-
-                echo "<tr>";
-                echo "<td>". $test['Ditem']. "</td>";
-                echo "<td>". $test['Dcost']. "</td>";
-                echo "<td>". $test['Dstock']. "</td>";
-                echo "</tr>";
-
-
-            }
-            echo "</table>";
-        }
-    }
-    ?>
-
     <?php
     if(isset($_POST['drinkitemquery']))
     {
