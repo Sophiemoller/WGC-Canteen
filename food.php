@@ -174,7 +174,7 @@ $all_food_result = mysqli_query($con, $all_food_query);
     <?php
     if(isset($_POST['foodcostquery']))
     {
-        $result=mysqli_query($con, "SELECT * FROM food ORDER BY food.Fcost DESC");
+        $result=mysqli_query($con, "SELECT * FROM food ORDER BY food.Fcost ASC ");
         if(mysqli_num_rows($result)!=0)
         {
             echo "<table>";
