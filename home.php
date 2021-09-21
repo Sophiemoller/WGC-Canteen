@@ -110,8 +110,14 @@ $all_specials_result = mysqli_query($con, $all_specials_query);
 
         ?>
     </select>
+
     <input type="submit" name="drinks_button" value="Show me the drink information">
     </form>
+
+    <?php
+    echo "<img src='https://wgc.school.nz/wp-content/uploads/2018/09/enrolment-image.jpg' alt='Image of WGC canteen'/>";
+    ?>
+
     <!--specials form-->
     <h2>Specials Information</h2>
     <form name="specials form" id="specials form" method="get" action="specials.php">
