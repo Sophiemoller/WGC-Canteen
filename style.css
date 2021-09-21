@@ -56,6 +56,7 @@ p {
 .footer {
     background-color: teal;
     font-family: 'Cabin', sans-serif;
+    text-overline-color: white;
     color: rgb(242, 244, 247);
     text-align: center;
     padding: 20px;
@@ -115,4 +116,9 @@ td {
 
 tr {
     border: thick solid teal;
+}
+image {
+    width: auto;
+    height: auto;
+    alignment: right;
 }
